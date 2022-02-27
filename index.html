@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="svgLogo2.svg">
+
+    <title>Mini Project - Rahmad Arif</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,400&family=Roboto:ital,wght@1,300&display=swap');
+        
+        *{
+            font-family: "poppins", sans-serif;
+        }
+
+/* HEADER STYLE */
+
+        .soc-med {
+            padding-top: 25px;
+            padding-left: 20px;
+            color:#733fab;
+        }
+        
+        .soc-med a {
+            padding: 10px;
+            color: #733fab;
+            text-decoration: none;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4d0a6f, rgba(255, 255, 255, 0), #eea336);
+            border-radius: 30px;
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: white;
+            padding-left: 20px;
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover {
+               color: #ebb41d;
+        }
+
+        button{
+            color: white;
+            line-height: 1;
+            background-color: transparent;
+            border: 1px solid transparent;
+            border-radius: 0.25rem;
+            transition: box-shadow .15s ease-in-out;
+            font-size: 25px;    
+        }
+
+        button :hover{
+            color:#733fab;
+        }
+
+        .dropdown-item:hover {
+            background-color: #4d0a6f;
+        }
+
+        @media (min-width:991px){
+            button span{
+                display: none;
+            }
+            .navbar-light .navbar-nav .nav-link:hover {
+               color: #4d0a6f;
+        }
+        }
+
+        .alert {
+            background: linear-gradient(135deg, #ff000032, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+            border-radius: 30px;
+            border: 0 solid transparent;
+            margin-top: 10px;
+            padding-left: 30px;
+        }
+        
+        .alert a{
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.422);
+        }
+
+        /* .color-palete {
+            color: #301b44;
+            color: #733fab;
+            color: #543ba3;
+            color: #95bbe8;
+            color: #b058c6;
+        } */
+
+        .content{
+            display: flex;
+            justify-content: center;
+        }
+
+        .content-grid{
+            display: grid;
+            grid-template-columns: repeat(3,30%);
+            justify-content: center;
+            gap: 3%;
+        }
+
+        .content-grid .card-game:hover{
+            /* background-color: rgba(255, 255, 255, 0.109); */
+            background: linear-gradient(135deg, #4d0a6f, #eea336);
+            border: 0px solid transparent;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 35px;
+            padding: 10px;
+        }
+
+        .card-game {
+            background-color: transparent;
+            border: 1px transparent solid;
+            color: white;
+            margin-bottom: 30px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+
+        .card-game a{
+            color: black;
+            background-color: white;
+            text-decoration: none;
+            padding-left: 25px;
+            padding-right: 25px;
+            border-radius: 20px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+        }
+        .card-game a:hover{
+            /* background: linear-gradient(135deg, #733fab, #ebb41d); */
+            background-color: #733fab;
+            color: white;
+            text-decoration: none;
+            border: 0px solid transparent;
+            padding-left: 25px;
+            padding-right: 25px;
+            border-radius: 20px;
+        }
+
+        .modal-content {
+            border-radius: 30px;
+            background-color: #ebeaea;
+        }
+
+        .feedback {
+            color: white;
+            padding: 30px;
+            /* border-radius: 20px;
+            background: linear-gradient(135deg, #733fab58, #ebb41d32);
+            border: 0px transparent solid; */
+        }
+
+        .feedback input{
+            color: black;
+            background-color: white;
+        }
+
+        hr.solid {
+            margin: 50px 50px 0px 50px;
+            padding-top: 50px;
+            border-top: 2px solid #6c757d;
+        }
+
+    </style>
+
+</head>
+
+<!-- 1. SCREEN < 576PX -->
+<body class="container container-sm" style="background-color: #131517ee;">
+
+    <!-- Notification -->
+    <div class="soc-med">
+        <i class="bi bi-headset" style="padding-left: 10px;"></i>Support-Us 
+        <a href=""><i class="bi bi-whatsapp" style="font-size: 15px; padding-left: 15px;"></i></a>
+        <a href=""><i class="bi bi-linkedin" style="font-size: 15px;"></i></a>
+        <a href=""><i class="bi bi-facebook" style="font-size: 15px;"></i></a>
+        <a href=""><i class="bi bi-instagram" style="font-size: 15px;"></i></a>
+    </div>
+
+<!-- 3. ADD NAVBAR (HOME & ABOUT US )  -->
+    <!-- Nav Bar -->
+    <header class="header">
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-sm" style="display: flex; justify-content: space-between; align-items: center;">
+                <a class="navbar-brand" href="./parallax.html" style="color:white; padding-left: 20px;"><img src="./svgLogo.svg" alt=""> Home</a>
+                <div>
+                    <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span><i class="bi bi-three-dots" ></i></span>
+                    </button>
+                </div>
+            </div>
+
+    <!-- collapse -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="d-flex">
+                    <div style="padding-left: 15px; width: max-content  ;">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a href="./about.html" class="nav-link">
+                                    About Us</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                                    Genre
+                                </a>
+                                <ul style="background-color: #191b1f86; border-radius: 10px;" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item disabled" style="color : transparent;" href="#"></a></li>
+                                    <li><a class="dropdown-item" style="color : white;" href="parallax.html">Adventure</a></li>
+                                    <li><a class="dropdown-item" style="color : white;" href="parallax.html">Battle Arena</a></li>
+                                    <li><a class="dropdown-item" style="color : white;" href="parallax.html">Strategy</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" style="color : white;" href="parallax.html">Up-Coming <i class="bi bi-stars" style="color:#ebb41d;"></i></a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" style="width: max-content; padding-right: 30px;" class="nav-link"><i class="bi bi-person-fill" id="top"></i> Sign In</a>
+                            </li>
+                        </ul>
+                        </div>
+                    </form>
+                </div>  
+            </nav>
+        
+    </header>
+
+    <!-- BreadCrumb -->
+    <!-- <nav style="--bs-breadcrumb-divider: '>'; padding-left: 30px; margin-top: 10px;" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a style="text-decoration: none; color: #733fab;" href="index.html">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">About Us</li>
+        </ol>
+    </nav> -->
+
+    <!-- Alerts -->
+    <div class="alert alert-light" role="alert" style="margin-bottom: 0px;">
+        <a href="parallax.html"> New Game Arrival on Feb 2022, check it out! </a>
+    </div>
+
+    <!-- Carousel Page -->
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div style="border-radius: 30px; height: 80%; display: flex; align-items: center;" class="carousel-inner">
+        <div class="carousel-item" data-bs-interval="2500">
+            <img style="border-radius: 30px;" src="./asset/animevs.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item active" data-bs-interval="3000">
+            <img style="border-radius: 30px;"src="./asset/marvel.png" class="d-block w-100" alt="...">
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+<!-- 2. ROUNDED CORNERS IMAGE -->
+    <!-- Content Card -->
+    <div class="content">
+    <div class="content-grid">
+        <div class="card-game card">
+            <img style="border-radius: 35px;" src="card/card1.png" class="card-img-top" alt="https://unsplash.com">
+            <div class="card-body">
+                <h5 class="card-title">Mobile Suit Gundam Hathaway</h5>
+                <p class="card-text" style="font-size:x-small; font-weight: lighter;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="background-color: transparent; color: white;">IDR 199k </li>
+            </ul>
+            <div class="card-body">
+                <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#Modal1">Buy</a>
+                <a href="parallax.html" class="btn">Preview</a>
+            </div>
+        </div>
+        
+        <div class="card-game card">
+            <img style="border-radius: 30px;" src="card/card4.png" class="card-img-top" alt="https://unsplash.com">
+            <div class="card-body">
+                <h5 class="card-title">Marvel United</h5>
+                <p class="card-text" style="font-size:x-small; font-weight: lighter;">Some quick example text to build on the card title and make up the bulk of the card's content. <br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quae deserunt consequatur exercitationem cum eum asperiores ut nulla odit perspiciatis tempore, vero, veniam dolore beatae possimus ipsam minus dignissimos inventore.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="background-color: transparent; color: white;">IDR 299 </li>
+            </ul>
+            <div class="card-body">
+                <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#Modal2">Buy</a>
+                <a href="parallax.html" class="btn">Preview</a>
+            </div>
+        </div>
+
+        <div class="card-game card">
+            <img style="border-radius: 30px;" src="card/card2.png" class="card-img-top" alt="https://unsplash.com">
+            <div class="card-body">
+                <h5 class="card-title">Beatrix Advanture</h5>
+                <p class="card-text" style="font-size:x-small; font-weight: lighter;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A dignissimos illum molestiae fuga, dolorem neque unde deleniti temporibus amet est praesentium, qui minima dolor at debitis, suscipit aspernatur placeat assumenda.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="background-color: transparent; color: white;">IDR 249k </li>
+            </ul>
+            <div class="card-body">
+                <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#Modal3">Buy</a>
+                <a href="parallax.html" class="btn">Preview</a>
+            </div>
+        </div>
+
+        <div class="card-game card">
+            <img style="border-radius: 30px;" src="card/card5.png" class="card-img-top" alt="https://unsplash.com">
+            <div class="card-body">
+                <h5 class="card-title">Cyber PUNK 2077</h5>
+                <p class="card-text" style="font-size:x-small; font-weight: lighter;">Some quick example text to build on the card title and make up the bulk of the card's content. <br><br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium iste fuga labore quaerat itaque culpa, quis aspernatur rem, ad veritatis eos qui totam, et inventore. Harum a quaerat aliquam at!</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="background-color: transparent; color: white;">IDR 249k </li>
+            </ul>
+            <div class="card-body">
+                <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#Modal4">Buy</a>
+                <a href="parallax.html" class="btn">Preview</a>
+            </div>
+        </div>
+        
+        <div class="card-game card">
+            <img style="border-radius: 30px;" src="card/card3.png" class="card-img-top" alt="https://unsplash.com">
+            <div class="card-body">
+                <h5 class="card-title">Unknown Verse - IronMad</h5>
+                <p class="card-text" style="font-size:x-small; font-weight: lighter;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="background-color: transparent; color: white;">IDR 149k </li>
+            </ul>
+            <div class="card-body">
+                <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#Modal5">Buy</a>
+                <a href="parallax.html" class="btn">Preview</a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- MODAL -->
+    <DIV>
+    <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Detail Purchase</h5>
+            </div>
+            <div class="modal-body">
+                <!-- <center> -->
+                    <img style="width: 50%; border-radius: 30px;" src="card/card1.png" alt="...">
+                <!-- </center>  -->
+                <h5 style="font-weight: bold; padding-top: 20px;">Something went wrong</h5>
+                Make sure you have Signed In before purchase the game for safety payment. Already have account ?
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-light" style="border-radius: 30px;" data-bs-dismiss="modal">Back</button>
+            <button type="button" class="btn btn-primary" style="border-radius: 30px;">Sign In</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Detail Purchase</h5>
+            </div>
+            <div class="modal-body">
+                <img style="width: 50%; border-radius: 30px;" src="card/card4.png" alt="...">
+                <h5 style="font-weight: bold; padding-top: 20px;">Something went wrong</h5>
+                Make sure you have Signed In before purchase the game for safety payment. Already have account ?
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-light" style="border-radius: 30px;" data-bs-dismiss="modal">Back</button>
+            <button type="button" class="btn btn-primary" style="border-radius: 30px;">Sign In</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="Modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Detail Purchase</h5>
+            </div>
+            <div class="modal-body">
+                <img style="width: 50%; border-radius: 30px;" src="card/card2.png" alt="...">
+                <h5 style="font-weight: bold; padding-top: 20px;">Something went wrong</h5>
+                Make sure you have Signed In before purchase the game for safety payment. Already have account ?
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-light" style="border-radius: 30px;" data-bs-dismiss="modal">Back</button>
+            <button type="button" class="btn btn-primary" style="border-radius: 30px;">Sign In</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="Modal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Detail Purchase</h5>
+            </div>
+            <div class="modal-body">
+                <img style="width: 50%; border-radius: 30px;" src="card/card5.png" alt="...">
+                <h5 style="font-weight: bold; padding-top: 20px;">Something went wrong</h5>
+                Make sure you have Signed In before purchase the game for safety payment. Already have account ?
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-light" style="border-radius: 30px;" data-bs-dismiss="modal">Back</button>
+            <button type="button" class="btn btn-primary" style="border-radius: 30px;">Sign In</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="Modal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Detail Purchase</h5>
+            </div>
+            <div class="modal-body">
+                <img style="width: 50%; border-radius: 30px;" src="card/card3.png" alt="...">
+                <h5 style="font-weight: bold; padding-top: 20px;">Something went wrong</h5>
+                Make sure you have Signed In before purchase the game for safety payment. Already have account ?
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-light" style="border-radius: 30px;" data-bs-dismiss="modal">Back</button>
+            <button type="button" class="btn btn-primary" style="border-radius: 30px;">Sign In</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    </DIV>
+
+    <br><hr class="solid">
+
+<!-- 4. FORM FOOTER -->
+    <!-- FEEDBACK -->
+    <div class="feedback">
+        <div>
+            <label>Your Email : </label><br>
+            <input type="email" class="form-control" style="width: 35%;" placeholder="your e-mail address">
+        </div>
+        <br>
+        <div>
+            <label>Type Here : </label><br>
+            <textarea class="form-control" style="width: 50%;" name="message" rows="5" placeholder="hi whatsup . ."></textarea>
+        </div>
+        <br>
+        <div>
+            <input type="submit" class="btn btn-danger" style="border-radius: 20px; border: 0px solid transparent;" value="Submit">
+        </div>
+    </div>
+
+
+
+    <br>
+</body>
+</html>
