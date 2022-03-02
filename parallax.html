@@ -219,37 +219,37 @@
         
     
 <!-- <section> -->
-    <div>
-        <!-- Parallax Image -->
-        <div class="parallax container-sm">
-                <img src="./parallax/Asset 3parallax.png" class="object" data-value="2" alt="cloud">
-                <img src="./parallax/Asset 4parallax.png" class="object" data-value="-1" alt="sun">
-                <img src="./parallax/Asset 5parallax.png" class="object" data-value="0" alt="land">
-                <img src="./parallax/Asset 6parallax.png" class="object" data-value="1" alt="tower">
-                
-                <img src="./parallax/Asset 12parallax.png" class="object" data-value="6" alt="iron">
-                <img src="./parallax/Asset 13parallax.png" class="object" data-value="0" alt="HP">
-                <img src="./parallax/Asset 9parallax.png" class="object" data-value="-1" alt="tower2">
-                <img src="./parallax/Asset 11parallax.png" class="object" data-value="-6" alt="capt">
-                
-                <img src="./parallax/Asset 7parallax.png" class="object" data-value="30" alt="rock">
-                <img src="./parallax/Asset 10parallax.png" class="object" data-value="-30" alt="dust">
-            </div>
+<div>
+    <!-- Parallax Image -->
+    <div class="parallax container-sm">
+            <img src="./parallax/Asset 3parallax.png" class="object" data-value="2" alt="cloud">
+            <img src="./parallax/Asset 4parallax.png" class="object" data-value="-1" alt="sun">
+            <img src="./parallax/Asset 5parallax.png" class="object" data-value="0" alt="land">
+            <img src="./parallax/Asset 6parallax.png" class="object" data-value="1" alt="tower">
             
+            <img src="./parallax/Asset 12parallax.png" class="object" data-value="6" alt="iron">
+            <img src="./parallax/Asset 13parallax.png" class="object" data-value="0" alt="HP">
+            <img src="./parallax/Asset 9parallax.png" class="object" data-value="-1" alt="tower2">
+            <img src="./parallax/Asset 11parallax.png" class="object" data-value="-6" alt="capt">
             
-            <script type="text/javascript">
-            document.addEventListener("mousemove", parallax);
-            function parallax(e){
-                document.querySelectorAll(".object").forEach(function(move){
-                    
-                    var moving_value = move.getAttribute("data-value");
-                    var x = (e.clientX * moving_value) / 50;
-                    var y = (e.clientY * moving_value) / 150;
-                    
-                    move.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
-                });
-            }
-            </script>
+            <img src="./parallax/Asset 7parallax.png" class="object" data-value="30" alt="rock">
+            <img src="./parallax/Asset 10parallax.png" class="object" data-value="-30" alt="dust">
+        </div>
+        
+
+        <script type="text/javascript">
+        document.addEventListener("mousemove", parallax);
+        function parallax(e){
+            document.querySelectorAll(".object").forEach(function(move){
+                
+                var moving_value = move.getAttribute("data-value");
+                var x = (e.clientX * moving_value) / 50;
+                var y = (e.clientY * moving_value) / 150;
+                
+                move.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
+            });
+        }
+        </script>
     
     <br><hr class="solid">
 
@@ -268,10 +268,44 @@
         <div>
             <input type="submit" class="btn btn-danger" style="border-radius: 20px; border: 0px solid transparent;" value="Submit">
         </div>
+        <br>
+        <div>
+            <button class="btn btn-secondary" style="border-radius: 20px; border: 0px solid transparent;" onclick="myFunction()">Change BreadCrumb</button>
+        </div>
+
+<!-- Java Script Assignment -->
+        <div>
+            <script>
+                function myFunction() {
+                let list = document.getElementsByTagName("ol")[0];
+                list.getElementsByTagName("li")[2].innerHTML = "Adventure";
+                }
+
+                let input = document.createElement("input");
+                input.type = "submit";
+                input.style = "margin-left: 30px; padding : 5px 20px 5px 20px; border: 0px transparent solid; border-radius: 20px;";
+                input.value = "Back";
+                document.body.appendChild(input);
+                
+                let br = document.createElement("br");
+                document.body.appendChild(br);
+
+                let br2 = document.createElement("br");
+                document.body.appendChild(br2);
+                
+                let button = document.createElement("button");
+                button.innerHTML = "Find us on Social Media";
+                button.style = "margin-left: 30px; font-size: smaller; color: #6c757d;";
+                button.onclick = () => {alert("instagram : @rage.id , fb : RaGe Payment ID")};
+                document.body.appendChild(button);
+            </script>
+        </div>
+
     </div>
 
 </div>
 
+<br>
 <br>
 <br>
 
